@@ -1,0 +1,8 @@
+<h1>Items</h1>
+<ul>
+  <% @items.each do |item| %>
+    <li> Name: <%= item.title %> Description: <%= item.description %> Price: <%= item.price %></li>
+  <% end %>
+</ul>
+
+<%= link_to "add a new item", new_item_path %>
