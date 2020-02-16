@@ -4,4 +4,5 @@ class Item < ApplicationRecord
   validates :price, numericality: { only_integer: true }
   belongs_to :user
   # has_one_attached :photo
+  has_many_attached :photos
 end
