@@ -1,7 +1,7 @@
 <h1>Items</h1>
 <ul>
   <% @items.each do |item| %>
-    <li> Name: <%= item.title %> Description: <%= item.description %> Price: <%= item.price %></li>
+    <li> <%= link_to item.title, item_path(item) %>
   <% end %>
 </ul>
 
