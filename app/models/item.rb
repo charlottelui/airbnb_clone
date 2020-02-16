@@ -3,5 +3,7 @@ class Item < ApplicationRecord
   validates :description, presence: true
   validates :price, numericality: { only_integer: true }
   belongs_to :user
+  has_one :booking
   # has_one_attached :photo
+  has_many_attached :photos
 end

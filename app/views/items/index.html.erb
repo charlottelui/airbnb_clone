@@ -1,7 +1,10 @@
 <h1>Items</h1>
 <ul>
   <% @items.each do |item| %>
-    <li> <%= link_to item.title, item_path(item) %>
+    <li>
+      <%= link_to item.title, item_path(item) %>
+      <%= link_to "book", item_bookings_path(item) %>
+    </li>
   <% end %>
 </ul>
 
