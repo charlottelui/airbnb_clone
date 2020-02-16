@@ -1,6 +1,10 @@
 <h1><%= @item.title %></h1>
 <p><%= @item.description %></p>
 <p><%= @item.price %></p>
+<% @item.photos.each do |photo| %>
+<%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 
 <%= link_to "homepage", items_path %>
 <%= link_to "edit", edit_item_path(@item) %>
