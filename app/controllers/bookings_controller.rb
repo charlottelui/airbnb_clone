@@ -3,5 +3,6 @@ class BookingsController < ApplicationController
     item = Item.find(params['item_id'])
     @booking = Booking.new(item: item, user: current_user)
     @booking.save
+    authorize @booking
   end
 end
