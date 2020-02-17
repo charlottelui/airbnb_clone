@@ -1,9 +1,10 @@
+<div class="container">
+  <h2 class="mt-4 h3 mb-3 font">Adding new <strong> Item</strong></h2>
 <%= simple_form_for [@item] do |f| %>
       <%= f.input :title %>
       <%= f.input :description %>
       <%= f.input :price %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.button :submit, class: 'button' %>
+      <%= f.button :submit, class: 'font btn btn-primary mb-3' %>
     <% end %>
-
-<%= link_to "homepage", items_path %>
+</div>
