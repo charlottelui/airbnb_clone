@@ -6,4 +6,87 @@
 .user-info {
   margin-right: 8px;
   padding: 0 24px;
+  text-align: center;
+  border-right: 1px solid rgb(220, 220, 220);
+
+  h1 {
+    margin: 0px;
+  }
+
+  h4 {
+    margin-top: 16px;
+    margin-bottom: 0px;
+  }
 }
+
+.profile-stat {
+  display: flex;
+  justify-content: space-around;
+}
+
+.counts {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: #A67F8E;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 16px;
+  width: 88px;
+  p {
+    margin: 0px;
+    color: rgb(220,220,220);
+    font-weight: lighter;
+    font-size: 12px;
+  }
+}
+
+.user-items {
+  margin-left: 24px;
+}
+
+.nav-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-bottom: 24px;
+}
+
+// @media (min-width: 576px)
+//   .nav-cards {
+//     grid-template-columns: 1fr 1fr;
+//   }
+
+// @media (max-width: 575px)
+//   .nav-cards {
+//     grid-template-column: 1fr;
+//   }
+
+.nav-card {
+  box-shadow: 2px 2px 2px 1px rgb(220, 220, 220);
+  width: 320px;
+  border-radius: 16px;
+
+}
+
+.nav-card-img {
+  display: block;
+  margin: 8px 16px;
+  img {
+    width: 280px;
+    border-radius: 16px;
+  }
+}
+
+.nav-card-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  margin: 16px 0;
+  p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
