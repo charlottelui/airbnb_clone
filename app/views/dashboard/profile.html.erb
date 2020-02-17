@@ -1,7 +1,11 @@
 <div class="dashboard-container">
   <div class="user-info">
-    <!-- add user img -->
-    <h1>Welcome, <%#= @user.first_name %></h1>
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, class: "profile-avatar" %>
+    <% else %>
+      <%= image_tag "https://i.ya-webdesign.com/images/default-avatar-png-18.png", class: "profile-avatar" %>
+    <% end %>
+    <h1>Welcome, <%#= current_user.first_name %></h1>
     <div class="bookings-count">
       <%= @user.bookings.count %>
       <p>My Bookings</p>
