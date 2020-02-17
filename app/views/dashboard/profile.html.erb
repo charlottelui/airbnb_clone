@@ -3,7 +3,7 @@
 <h2>My Bookings</h2>
 <ul>
 <% @user.bookings.each do |booking| %>
-<li> <%= booking.item.title %> </li>
+<li> <%= link_to booking.item.title, item_path(booking.item) %> </li>
 <% end %>
 </ul>
 
@@ -11,6 +11,6 @@
 <h2>My Items</h2>
 <ul>
 <% @user.items.each do |item| %>
-<li> <%= item.title %> </li>
+<li> <%= link_to item.title, item_path(item) %> </li>
 <% end %>
 </ul>
