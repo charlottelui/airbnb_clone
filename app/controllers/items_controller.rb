@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.user_id = 1
+    @item.user = current_user
     if @item.save
       redirect_to item_path(@item), notice: 'item was successfully added.'
     else
