@@ -5,30 +5,69 @@
     <% else %>
       <%= image_tag "https://i.ya-webdesign.com/images/default-avatar-png-18.png", class: "profile-avatar" %>
     <% end %>
-    <h1>Welcome, <%#= current_user.first_name %></h1>
-    <div class="bookings-count">
-      <%= @user.bookings.count %>
-      <p>My Bookings</p>
+    <div class="welcome-message">
+      <h4>Welcome</h4>
+      <h1><%= current_user.first_name %></h1>
     </div>
-    <div class="items-count">
-      <%= @user.items.count %>
-      <p>My Items</p>
+
+    <div class="profile-stat">
+      <div class="counts">
+        <%= @user.bookings.count %>
+        <p>Bookings</p>
+      </div>
+      <div class="counts">
+        <%= @user.items.count %>
+        <p>Items</p>
+      </div>
     </div>
   </div>
 
   <div class="user-items">
     <h2>My Bookings</h2>
-    <ul>
-    <% @user.bookings.each do |booking| %>
-    <li> <%= link_to booking.item.title, item_path(booking.item) %> </li>
+    <div class="nav-cards">
+      <% @user.bookings.each do |booking| %>
+        <div class="nav-card">
+          <div class="nav-card-img">
+            <% if booking.item.photos.attached? %>
+              <%= cl_image_tag item.photos.first.key, height: 300, width: 400, crop: :fill %>
+            <% else %>
+            <%= image_tag 'https://cdn4.iconfinder.com/data/icons/documents-letters-and-stationery/400/doc-14-512.png' %>
+            <% end %>
+          </div>
+          <div class="nav-card-info">
+            <div>
+              <p><%= booking.item.title.capitalize %></p>
+            </div>
+            <div>
+              <%= link_to 'See Details', item_path(booking.item), class: 'button' %>
+            </div>
+          </div>
+        </div>
     <% end %>
-    </ul>
+    </div>
+
 
     <h2>My Items</h2>
-    <ul>
+    <div class="nav-cards">
     <% @user.items.each do |item| %>
-    <li> <%= link_to item.title, item_path(item) %> </li>
+      <div class="nav-card">
+        <div class="nav-card-img">
+          <% if item.photos.attached? %>
+            <%= cl_image_tag item.photos.first.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+          <%= image_tag 'https://cdn4.iconfinder.com/data/icons/documents-letters-and-stationery/400/doc-14-512.png' %>
+          <% end %>
+        </div>
+        <div class="nav-card-info">
+          <div>
+            <p><%= item.title.capitalize %></p>
+          </div>
+          <div>
+            <%= link_to 'See Details', item_path(item), class: 'button' %>
+          </div>
+        </div>
+      </div>
     <% end %>
-    </ul>
+    </div>
   </div>
 </div>
