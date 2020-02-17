@@ -1,16 +1,30 @@
-<h1>Welcome, <%#= @user.first_name %></h1>
+<div class="dashboard-container">
+  <div class="user-info">
+    <!-- add user img -->
+    <h1>Welcome, <%#= @user.first_name %></h1>
+    <div class="bookings-count">
+      <%= @user.bookings.count %>
+      <p>My Bookings</p>
+    </div>
+    <div class="items-count">
+      <%= @user.items.count %>
+      <p>My Items</p>
+    </div>
+  </div>
 
-<h2>My Bookings</h2>
-<ul>
-<% @user.bookings.each do |booking| %>
-<li> <%= link_to booking.item.title, item_path(booking.item) %> </li>
-<% end %>
-</ul>
+  <div class="user-items">
+    <h2>My Bookings</h2>
+    <ul>
+    <% @user.bookings.each do |booking| %>
+    <li> <%= link_to booking.item.title, item_path(booking.item) %> </li>
+    <% end %>
+    </ul>
 
-
-<h2>My Items</h2>
-<ul>
-<% @user.items.each do |item| %>
-<li> <%= link_to item.title, item_path(item) %> </li>
-<% end %>
-</ul>
+    <h2>My Items</h2>
+    <ul>
+    <% @user.items.each do |item| %>
+    <li> <%= link_to item.title, item_path(item) %> </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
