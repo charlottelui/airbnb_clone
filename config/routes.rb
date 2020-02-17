@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :items do
     resources :bookings, only: [:create]
   end
+
+  get 'dashboard', to: 'dashboard#profile', as: :dashboard
 end

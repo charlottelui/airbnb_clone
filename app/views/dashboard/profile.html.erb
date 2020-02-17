@@ -1,0 +1,16 @@
+<h1>Welcome, <%#= @user.first_name %></h1>
+
+<h2>My Bookings</h2>
+<ul>
+<% @user.bookings.each do |booking| %>
+<li> <%= booking.item.title %> </li>
+<% end %>
+</ul>
+
+
+<h2>My Items</h2>
+<ul>
+<% @user.items.each do |item| %>
+<li> <%= item.title %> </li>
+<% end %>
+</ul>
