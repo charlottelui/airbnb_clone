@@ -1,3 +1,27 @@
 .font {
   font-family: 'Open Sans', sans-serif;
 }
+
+.form-flexbox {
+  display: flex;
+  img {
+  width:600px;
+  height: 600px;
+  margin-right: 40px;
+
+  }
+}
+
+
+.form-container {
+ width: 80%;
+ margin: 0 auto;
+}
+
+.new-form-title {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 40px;
+  margin-bottom: 20px;
+
+}
