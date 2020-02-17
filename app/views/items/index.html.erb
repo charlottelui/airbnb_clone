@@ -8,7 +8,12 @@
           <div class="item-card">
             <!-- photo -->
             <div class="item-card-img" style= "background-image:url(
-            '<%= cl_image_path item.photos.first.key, height: 300, width: 400, crop: :fill %>')">
+              <% if item.photos.attached? %>
+            '<%= cl_image_path item.photos.first.key, height: 300, width: 400, crop: :fill %>')
+            <% else %>
+            'https://cdn4.iconfinder.com/data/icons/documents-letters-and-stationery/400/doc-14-512.png')
+            ">
+            <% end %>
             </div>
             <div class="item-card-title">
               <strong><%= item.title.capitalize %></strong>
