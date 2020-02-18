@@ -1,0 +1,32 @@
+.show-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.show-page-card {
+  display: flex;
+  flex-direction: row;
+  .show-card-img {
+    width: 400px;
+    min-width: 400px;
+    height: 400px;
+    margin-right: 40px;
+    margin-top: 12px;
+    border-radius: 8px;
+
+  }
+}
+
+.show-card-title {
+  text-align: center;
+}
+
+.show-card-info {
+  padding: 8px 8px;
+  text-align: justify;
+}
+
+.show-card-links {
+  display: flex;
+  justify-content: center;
+}
