@@ -12,4 +12,12 @@ class BookingsController < ApplicationController
     end
     render 'items/show', notice: 'Could not book'
   end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    authorize @booking
+
+    redirect_to items_path
+  end
 end

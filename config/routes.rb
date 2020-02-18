@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
+  resources :bookings, only: :destroy
+
   delete '/items/:id/photo/:photo_id', to: 'items#destroy_photo'
 
   get 'dashboard', to: 'dashboard#profile', as: :dashboard
