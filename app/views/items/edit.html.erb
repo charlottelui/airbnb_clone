@@ -9,9 +9,7 @@
 
     <% @item.photos.each do |photo| %>
    <%=  cl_image_tag(photo.key, height: 300, width: 400, crop: :fill) %>
-   <%= link_to 'delete photo',"/items/#{@item.id}/photo/#{photo.id}" , method: :delete %>
+   <%= link_to 'delete photo',"/items/#{@item.id}/photo/#{photo.id}" , method: :delete, class: 'button' %>
     <% end %>
-
-<%= link_to "homepage", items_path %>
-<%= link_to "back to item", item_path(@item) %>
+<%= link_to "back to item", item_path(@item), class: 'button' %>
 
