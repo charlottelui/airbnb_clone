@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :destroy_photo]
   def index
     @items = policy_scope(Item)
   end
@@ -39,6 +39,13 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     redirect_to items_path, notice: "item was successfully deleted"
+  end
+
+  def destroy_photo
+    photo = @item.photos.find(params['photo_id'])
+    photo.purge unless photo.nil?
+
+    redirect_to item_path(@item)
   end
 
   private

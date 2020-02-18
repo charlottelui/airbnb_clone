@@ -21,6 +21,10 @@ class ItemPolicy < ApplicationPolicy
       owner?
     end
 
+    def destroy_photo?
+      owner?
+    end
+
     private
 
     def owner?
