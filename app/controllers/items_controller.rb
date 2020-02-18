@@ -44,8 +44,7 @@ class ItemsController < ApplicationController
   def destroy_photo
     photo = @item.photos.find(params['photo_id'])
     photo.purge unless photo.nil?
-
-    redirect_to item_path(@item)
+    redirect_to edit_item_path(@item)
   end
 
   private

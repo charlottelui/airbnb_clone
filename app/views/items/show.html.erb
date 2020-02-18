@@ -1,7 +1,10 @@
+
 <div class="show-container">
   <div class="show-page-card">
     <% @item.photos.each do |photo| %>
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: 'show-card-img' %>
+      <%= link_to 'delete photo',"/items/#{@item.id}/photo/#{photo.id}" , method: :delete %>
+    
     <% end %>
     <div class="show-card-details">
       <div class= "show-card-info">
@@ -23,3 +26,4 @@
     </div>
   </div>
 </div>
+
