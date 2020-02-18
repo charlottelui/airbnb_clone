@@ -1,14 +1,18 @@
 
 <div class="show-container">
   <div class="show-page-card">
-    <% @item.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: 'show-card-img' %>
-      <%= link_to 'delete photo',"/items/#{@item.id}/photo/#{photo.id}" , method: :delete %>
-    
-    <% end %>
+    <!-- <div class="carousel-inner"> -->
+      <% @item.photos.each do |photo| %>
+        <!-- <div class="carousel-item"> -->
+          <div class="trash-can">
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: 'show-card-img' %>
+          </div>
+        <!-- </div> -->
+      <% end %>
+    <!-- </div> -->
     <div class="show-card-details">
       <div class= "show-card-info">
-        <h1 class= "show-card-title"><%= @item.title %></h1>
+        <h1 class= "show-card-title"><%= @item.title.capitalize %></h1>
         <p><strong>Price: </strong>$<%= @item.price %></p>
         <p><strong>About this item: </strong><%= @item.description %></p>
       </div>
@@ -20,7 +24,11 @@
           <% if policy(@item).destroy? %>
             <%= link_to "Delete", item_path(@item), method: :delete, data: { confirm: "Are you sure you want to delete this item?" }, class: 'button'%>
           <% end %>
-          <%= link_to "Book", item_bookings_path(@item), method: :post, class: 'button'%>
+          <% if @item.booking %>
+            <p>Reserved</p>
+          <% else %>
+            <%= link_to "Book", item_bookings_path(@item), method: :post, class: 'button'%>
+          <% end %>
         </div>
       </div>
     </div>

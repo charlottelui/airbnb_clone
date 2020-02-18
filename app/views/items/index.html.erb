@@ -9,22 +9,24 @@
             <!-- photo -->
             <div class="item-card-img" style= "background-image:url(
               <% if item.photos.attached? %>
-            '<%= cl_image_path item.photos.first.key, height: 300, width: 400, crop: :fill %>')
-            <% else %>
-            'https://cdn4.iconfinder.com/data/icons/documents-letters-and-stationery/400/doc-14-512.png')
-            ">
-            <% end %>
+                <%= cl_image_path item.photos.first.key, height: 300, width: 400, crop: :fill %>
+              <% else %>
+                <%= 'https://cdn4.iconfinder.com/data/icons/documents-letters-and-stationery/400/doc-14-512.png' %>
+              <% end %>)">
             </div>
             <div class="item-card-title">
               <strong><%= item.title.capitalize %></strong>
             </div>
             <div class="item-card-info">
               <%= link_to 'See Details', item_path(item), class: 'button' %>
-              <%= link_to "I want it!", item_bookings_path(item), method: :post, class: 'button'  %>
+              <% if item.booking %>
+                <p>Reserved</p>
+              <% else %>
+                <%= link_to "I want it!", item_bookings_path(item), method: :post, class: 'button'  %>
+              <% end %>
             </div>
           </div>
         </div>
-      <% end %>
+      <% end %><!-- @items.each -->
     </div>
   </div>
-

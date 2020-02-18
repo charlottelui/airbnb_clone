@@ -13,6 +13,7 @@
     margin-right: 40px;
     margin-top: 12px;
     border-radius: 8px;
+    position: relative;
 
   }
 }
@@ -29,4 +30,10 @@
 .show-card-links {
   display: flex;
   justify-content: center;
+}
+
+.delete-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
