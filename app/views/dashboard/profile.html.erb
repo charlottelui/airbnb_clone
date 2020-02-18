@@ -29,7 +29,7 @@
         <div class="nav-card">
           <div class="nav-card-img">
             <% if booking.item.photos.attached? %>
-              <%= cl_image_tag item.photos.first.key, height: 300, width: 400, crop: :fill %>
+              <%= cl_image_tag booking.item.photos.first.key, height: 300, width: 400, crop: :fill %>
             <% else %>
             <%= image_tag 'https://cdn4.iconfinder.com/data/icons/documents-letters-and-stationery/400/doc-14-512.png' %>
             <% end %>
