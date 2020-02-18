@@ -1,6 +1,7 @@
 .explain {
   text-align: center;
   margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .explain-section {
@@ -9,8 +10,20 @@
 }
 
 .explain-card {
+  width: 320px;
+  box-shadow: 4px 1px 16px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  h3 {
+    margin-top: 4px;
+  }
   p {
-    color: rgb(180, 180, 180)
+    color: rgb(180, 180, 180);
+    margin: 0;
+  }
+  img {
+    width: 280px;
+    border-radius: 8px;
   }
 }
 
