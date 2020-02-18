@@ -1,15 +1,29 @@
-<h1><%= @item.title %></h1>
-<p><%= @item.description %></p>
-<p><%= @item.price %></p>
-<% @item.photos.each do |photo| %>
-<%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<%= link_to 'delete photo',"/items/#{@item.id}/photo/#{photo.id}" , method: :delete %>
-<% end %>
-<% if policy(@item).edit? %>
-  <%= link_to "edit", edit_item_path(@item) %>
-<% end %>
-<% if policy(@item).destroy? %>
-  <%= link_to "Delete", item_path(@item), method: :delete, data: { confirm: "Are you sure you want to delete this item?" }%>
-<% end %>
-<%= link_to "Book", item_bookings_path(@item), method: :post%>
+
+<div class="show-container">
+  <div class="show-page-card">
+    <% @item.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: 'show-card-img' %>
+      <%= link_to 'delete photo',"/items/#{@item.id}/photo/#{photo.id}" , method: :delete %>
+    
+    <% end %>
+    <div class="show-card-details">
+      <div class= "show-card-info">
+        <h1 class= "show-card-title"><%= @item.title %></h1>
+        <p><strong>Price: </strong>$<%= @item.price %></p>
+        <p><strong>About this item: </strong><%= @item.description %></p>
+      </div>
+      <div class="show-card-links">
+        <div>
+          <% if policy(@item).edit? %>
+            <%= link_to "Edit", edit_item_path(@item), class: 'button' %>
+          <% end %>
+          <% if policy(@item).destroy? %>
+            <%= link_to "Delete", item_path(@item), method: :delete, data: { confirm: "Are you sure you want to delete this item?" }, class: 'button'%>
+          <% end %>
+          <%= link_to "Book", item_bookings_path(@item), method: :post, class: 'button'%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
