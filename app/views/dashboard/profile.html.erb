@@ -19,6 +19,18 @@
         <%= @user.items.count %>
         <p>Items</p>
       </div>
+      <div class="counts">
+        <% booked_items = [] %>
+        <% @user.items.each do |item| %>
+          <% booked_items << item if item.booking %>
+        <% end %>
+        <% earnings = 0 %>
+        <% booked_items.each do |item| %>
+          <% earnings += item.price %>
+        <% end %>
+        <%= "$#{earnings}" %>
+        <p>Earnings</p>
+      </div>
     </div>
   </div>
 
