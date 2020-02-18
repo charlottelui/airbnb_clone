@@ -66,6 +66,47 @@ padding: 16px 16px;
   text-align: center;
 }
 
+.user-stories {
+  text-align: center;
+  margin-bottom: 24px;
+  h2 {
+    margin-bottom: 8px;
+  }
+}
+
+.story-card {
+  text-align: left;
+  display: flex;
+  padding: 24px 40px;
+  background-color: rgb(220, 220, 220);
+  border-radius: 16px;
+
+  .story-avatar {
+    border-radius: 50%;
+    width: 225px;
+  }
+
+
+}
+
+.story-text {
+  padding-left: 24px;
+  p {
+    padding-top: 24px;
+    padding-right: 48px;
+    font-size: 20px;
+    font-style: italic;
+
+  }
+
+  .story-location {
+    text-align: right;
+    padding-right: 72px;
+    font-size: 18px;
+    color: rgb(120, 120, 120);
+  }
+}
+
 
 
 
