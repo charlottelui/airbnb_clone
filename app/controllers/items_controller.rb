@@ -1,7 +1,11 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy, :destroy_photo]
   def index
-    @items = policy_scope(Item)
+    if params[:query].present?
+      @items = policy_scope(Item.search_by_title_and_description(params[:query]))
+    else
+      @items = policy_scope(Item)
+    end
   end
 
   def show
