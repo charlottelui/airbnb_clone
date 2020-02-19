@@ -9,7 +9,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-
+    seller = @item.user
+    @first_three_items = seller.items.reject{|item| item == @item}.take(3)
   end
 
   def new

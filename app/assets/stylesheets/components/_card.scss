@@ -107,6 +107,53 @@ padding: 16px 16px;
   }
 }
 
+// .item-by-seller-card {
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   padding: 8px 8px 52px 8px;
+//   margin: 16px 24px;
+//   background-color: white;
+//   box-shadow: 4px 1px 16px 4px rgba(0, 0, 0, 0.1);
+//   border-radius: 6px;
+//   width: 200px;
+// }
+
+.item-seller-cards {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 24px;
+
+}
+
+
+.item-by-seller-card {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 8px;
+}
+
+.item-by-seller-card img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.item-by-seller-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.item-by-seller-card .item-seller-card-info {
+  padding: 16px;
+  width: 150px;
+}
 
 
 
