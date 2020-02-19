@@ -18,17 +18,17 @@ angel = User.create!(first_name: 'Angel', email: 'angel@angel.com', password: '1
 
 puts 'creating items'
 
-Item.create!(title: 'Sandwich', description: 'Half eaten BLT sandwich from yesterday', price: 5, user: charlotte)
-Item.create(title: 'Harry Potter vol. 3', description: 'Ripped out a few pages in chapter 6 but still readable', price: 10, user: charlotte)
-Item.create(title: 'iPhone 4s', description: 'The phone does not turn on but you can use it as a mirror', price: 30, user: charlotte)
+Item.create!(title: 'Sandwich', description: 'Half eaten BLT sandwich from yesterday', price: 5, user: charlotte, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'Harry Potter vol. 3', description: 'Ripped out a few pages in chapter 6 but still readable', price: 10, user: charlotte, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'iPhone 4s', description: 'The phone does not turn on but you can use it as a mirror', price: 30, user: charlotte, address:'16 Villa Gaudelet, Paris')
 
-Item.create(title: 'coffee', description: 'tons of caffeine to get you through the day. Just too much milk', price: 1, user: talia)
-Item.create(title: 'House plant', description: 'forgot to water it for a few weeks but the pot is so pretty', price: 15, user: talia)
-Item.create(title: 'watch', description: 'always says it is 3 pm', price: 20, user: talia)
+Item.create(title: 'coffee', description: 'tons of caffeine to get you through the day. Just too much milk', price: 1, user: talia, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'House plant', description: 'forgot to water it for a few weeks but the pot is so pretty', price: 15, user: talia, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'watch', description: 'always says it is 3 pm', price: 20, user: talia, address:'16 Villa Gaudelet, Paris')
 
-Item.create(title: 'Gucci', description: 'Pees on everything but otherwise very cute', price: 5000, user: angel)
-Item.create(title: 'New York Times 1997', description: 'A bit outdated but a great read', price: 100, user: angel)
-Item.create(title: 'whiteboard', description: 'I am too lazy to buy whiteboard cleaner. Comes with a free marker', price: 22, user: angel)
+Item.create(title: 'Gucci', description: 'Pees on everything but otherwise very cute', price: 5000, user: angel, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'New York Times 1997', description: 'A bit outdated but a great read', price: 100, user: angel, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'whiteboard', description: 'I am too lazy to buy whiteboard cleaner. Comes with a free marker', price: 22, user: angel, address:'16 Villa Gaudelet, Paris')
 
 puts "you have #{User.count} users & #{Item.count} items"
 

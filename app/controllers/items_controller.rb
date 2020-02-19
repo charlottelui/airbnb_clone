@@ -4,7 +4,15 @@ class ItemsController < ApplicationController
     if params[:query].present?
       @items = policy_scope(Item.search_by_title_and_description(params[:query]))
     else
-      @items = policy_scope(Item).order(created_at: :desc)
+      @items = policy_scope(Item.geocoded).order(created_at: :desc)
+    end
+    @markers = @items.map do |item|
+      {
+        lat: item.latitude,
+        lng: item.longitude,
+        image_url: helpers.asset_url('trash-solid')
+
+      }
     end
   end
 
@@ -60,6 +68,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:title, :description, :price, photos: [])
+    params.require(:item).permit(:title, :description, :price, :address, photos: [])
   end
 end
