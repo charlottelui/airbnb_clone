@@ -1,15 +1,30 @@
-
 <div class="show-container">
   <div class="show-page-card">
-    <!-- <div class="carousel-inner"> -->
-      <% @item.photos.each do |photo| %>
-        <!-- <div class="carousel-item"> -->
-          <div class="trash-can">
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: 'show-card-img' %>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= cl_image_tag @first_photo.key, height: 400, width: 400, crop: :fill, class: 'd-block w-100 show-card-img' %>
           </div>
-        <!-- </div> -->
-      <% end %>
-    <!-- </div> -->
+            <% @remaining_photos.each do |photo| %>
+          <div class="carousel-item">
+              <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill, class: 'd-block w-100 show-card-img' %>
+            </div>
+        <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+    </div>
     <div class="show-card-details">
       <div class= "show-card-info">
         <h1 class= "show-card-title"><%= @item.title.capitalize %></h1>
@@ -60,4 +75,3 @@
         </div>
     </div>
 </div>
-
