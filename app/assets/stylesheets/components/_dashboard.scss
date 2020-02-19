@@ -29,7 +29,7 @@
   color: white;
   font-weight: bold;
   font-size: 24px;
-  background-color: #A67F8E;
+  background-color: #09821B;
   border-radius: 8px;
   padding: 8px;
   margin-top: 16px;
@@ -44,6 +44,9 @@
 
 .user-items {
   margin-left: 24px;
+  h2 {
+    text-align: center;
+  }
 }
 
 .nav-cards {
@@ -115,7 +118,7 @@
   h3 {
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 1;
-    transition: 1s;
+    transition: 0.3s;
   }
 }
 
