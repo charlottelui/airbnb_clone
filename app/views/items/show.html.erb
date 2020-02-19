@@ -19,17 +19,23 @@
       <div class="show-card-links">
         <div>
           <% if policy(@item).edit? %>
-            <%= link_to "Edit", edit_item_path(@item), class: 'button' %>
+            <%= link_to edit_item_path(@item) do %>
+            <p class='button'>Edit <i class="far fa-edit"></i></p>
+            <% end %>
           <% end %>
           <% if policy(@item).destroy? %>
-            <%= link_to "Delete", item_path(@item), method: :delete, data: { confirm: "Are you sure you want to delete this item?" }, class: 'button'%>
+            <%= link_to  item_path(@item), method: :delete, data: { confirm: "Are you sure you want to delete this item?" } do %>
+            <p class='button'>Delete <i class="far fa-trash-alt"></i></p>
+            <% end %>
           <% end %>
           <% if @item.booking %>
             <%= link_to "Cancel booking", booking_path(@item.booking), method: :delete, data: { confirm: "Are you sure you want to delete this booking?" }, class: 'button' %>
             <p>You have reserved this item.</p>
             <p>Email <strong><%= @item.user.email %></strong> to arrange the transcation.</p>
           <% else %>
-            <%= link_to "Book", item_bookings_path(@item), method: :post, class: 'button'%>
+            <%= link_to item_bookings_path(@item), method: :post do%>
+            <p class='button'>Book <i class="far fa-bookmark"></i></p>
+            <% end %>
           <% end %>
         </div>
       </div>
