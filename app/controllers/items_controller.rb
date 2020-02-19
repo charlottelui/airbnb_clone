@@ -19,6 +19,8 @@ class ItemsController < ApplicationController
   def show
     seller = @item.user
     @first_three_items = seller.items.reject{|item| item == @item}.take(3)
+    @first_photo = @item.photos.first
+    @remaining_photos = @item.photos.reject{|photo| photo == @first_photo}
   end
 
   def new

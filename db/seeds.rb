@@ -18,17 +18,21 @@ angel = User.create!(first_name: 'Angel', email: 'angel@angel.com', password: '1
 
 puts 'creating items'
 
-Item.create!(title: 'Sandwich', description: 'Half eaten BLT sandwich from yesterday', price: 5, user: charlotte, address:'16 Villa Gaudelet, Paris')
-Item.create(title: 'Harry Potter vol. 3', description: 'Ripped out a few pages in chapter 6 but still readable', price: 10, user: charlotte, address:'16 Villa Gaudelet, Paris')
-Item.create(title: 'iPhone 4s', description: 'The phone does not turn on but you can use it as a mirror', price: 30, user: charlotte, address:'16 Villa Gaudelet, Paris')
 
-Item.create(title: 'coffee', description: 'tons of caffeine to get you through the day. Just too much milk', price: 1, user: talia, address:'16 Villa Gaudelet, Paris')
-Item.create(title: 'House plant', description: 'forgot to water it for a few weeks but the pot is so pretty', price: 15, user: talia, address:'16 Villa Gaudelet, Paris')
-Item.create(title: 'watch', description: 'always says it is 3 pm', price: 20, user: talia, address:'16 Villa Gaudelet, Paris')
+Item.create!(title: 'Half eaten sandwich', description: 'Half eaten BLT sandwich from yesterday. This sandwich really was very tasty but I asked the restaurant to leave out the tomatoes and they sent it with the tomatoes anyway. I did not want to throw away the sandwich because I only had one bite.', price: 5, user: charlotte, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'Harry Potter and the Chamber of Secrets', description: 'I ripped out a few chapters because I wanted to read this book on vacation but the whole book did not fit in my carry on. The book is still readble though and I am sure you can find the other chapters somewhere online too.', price: 10, user: charlotte, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'iPhone 4s', description: 'The phone does not turn on but you can use it as a mirror. I also have a cool case that comes with the phone as well. I bought the iPhone X So I do not really need this one anymore.', price: 30, user: charlotte, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'Used water bottle', description: 'I do not where to go to recycle this bottle. I drank most of it but there are still a few sips left', price: 30, user: charlotte, address:'16 Villa Gaudelet, Paris')
 
-Item.create(title: 'Gucci', description: 'Pees on everything but otherwise very cute', price: 5000, user: angel, address:'16 Villa Gaudelet, Paris')
-Item.create(title: 'New York Times 1997', description: 'A bit outdated but a great read', price: 100, user: angel, address:'16 Villa Gaudelet, Paris')
-Item.create(title: 'whiteboard', description: 'I am too lazy to buy whiteboard cleaner. Comes with a free marker', price: 22, user: angel, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'Half a cup of coffee', description: 'I went to sleep at 5 am and then made this coffee at work. I must have been really tired because I accidentally put salt in the coffee instead of sugar. I had a couple of sips and could not finish it.', price: 1, user: talia, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'Dead house plant', description: 'I went on vacation for a couple of weeks and my little brother forgot to water it while I was away. The pot is really pretty though!.', price: 15, user: talia, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'Broken watch', description: 'The watch is stuck and it always says that the time is 3 pm. It is a nice watch and I always get tons of compliments on it. It matches every outfit!', price: 20, user: talia, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'Broken bag', description: 'The zipper is broken so it does not close and all of my things are always falling out. If you know how to sew you might be able to fix it.', price: 20, user: talia, address:'16 Villa Gaudelet, Paris')
+
+Item.create(title: 'Gucci', description: 'Pees on everything but otherwise very cute. He is a lot of responsibility but he is fun to play with!', price: 5000, user: angel, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'New York Times 1997', description: 'I found this newspaper when I was doing some spring cleaning. this issue is a bit outdated but a still great read.', price: 100, user: angel, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'Used whiteboard', description: 'I wrote a bunch of stuff on the board and left it for a month. I am too lazy to buy whiteboard cleaner to erase it all. Comes with a free marker', price: 22, user: angel, address:'16 Villa Gaudelet, Paris')
+Item.create(title: 'Broken headphones', description: 'The left earbud does not work and I just bought new AirPods', price: 22, user: angel, address:'16 Villa Gaudelet, Paris')
 
 puts "you have #{User.count} users & #{Item.count} items"
 
