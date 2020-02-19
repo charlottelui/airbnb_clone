@@ -6,7 +6,8 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    # would be true. now it is only false if the item belongs to the current user
+    !(user == record.item.user)
   end
 
   def destroy?
