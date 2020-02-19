@@ -25,6 +25,9 @@
             <div class="item-card-title">
               <strong><%= item.title.capitalize %></strong>
             </div>
+            <div class="item-date">
+            <p>Posted on: <strong><%= item.created_at.strftime("%b %d, %Y") %></strong></p>
+            </div>
             <div class="item-card-info">
               <%= link_to 'See Details', item_path(item), class: 'button' %>
               <% if item.booking %>
