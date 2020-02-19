@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <%= link_to "/", class: "navbar-brand" do %>
     <div class="navbar-logo">
       <%= image_tag "https://www.pawprintbadges.co.uk/ekmps/shops/9507f2/images/recycling-collection-255-p.png" %>
@@ -14,10 +14,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item">
+        <li class="nav-item active mr-2">
           <%= link_to "All Available Wastes", items_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active mr-2">
           <%= link_to "Add a Waste", new_item_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
