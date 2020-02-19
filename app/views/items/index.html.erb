@@ -41,9 +41,9 @@
                   <p class="item-reserved"> <strong><u>Reserved</u></strong></p>
                 <% else %>
                   <% if item.user == current_user %>
-                    <%= link_to "I want it!", item_bookings_path(item), method: :post, class: 'button'  %>
-                  <% else %>
                     <p class="item-reserved"> <strong><u>My item</u></strong></p>
+                  <% else %>
+                    <%= link_to "I want it!", item_bookings_path(item), method: :post, class: 'button'  %>
                   <% end %>
                 <% end %>
               </div>
