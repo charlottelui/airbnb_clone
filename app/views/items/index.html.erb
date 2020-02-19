@@ -1,5 +1,13 @@
 <div class="container">
   <h1>All Used Items</h1>
+  <%= form_tag items_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a used item"
+    %>
+    <%= submit_tag "Search", class: "button" %>
+  <% end %>
 </div>
   <div class="container">
     <div class="row no-gutters">
