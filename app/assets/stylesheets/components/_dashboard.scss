@@ -101,17 +101,21 @@
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
-  color: black;
+  color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   h3 {
     opacity: 0;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
   }
 }
 
 .nav-card:hover {
-  opacity: 0.6;
   h3 {
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: 1;
+    transition: 1s;
   }
 }
 
