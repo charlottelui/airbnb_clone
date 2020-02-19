@@ -31,7 +31,7 @@
             <div class="item-card-info">
               <%= link_to 'See Details', item_path(item), class: 'button' %>
               <% if item.booking %>
-                <p>Reserved</p>
+                <p class="item-reserved"> <strong><u>Reserved</u></strong></p>
               <% else %>
                 <%= link_to "I want it!", item_bookings_path(item), method: :post, class: 'button'  %>
               <% end %>
