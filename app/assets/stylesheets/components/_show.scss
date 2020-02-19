@@ -1,11 +1,17 @@
 .show-container {
   width: 80%;
-  margin: 0 auto;
+  margin: 16px auto;
+}
+
+.show-card-details {
+  margin-left: 24px;
+  flex-grow: 3;
 }
 
 .show-page-card {
   display: flex;
   flex-direction: row;
+
   .show-card-img {
     width: 400px;
     min-width: 400px;
@@ -23,7 +29,7 @@
 }
 
 .show-card-info {
-  padding: 8px 8px;
+  padding: 8px 32px 0px 16px;
   text-align: justify;
 }
 
@@ -47,5 +53,35 @@
   h2 {
     text-align: center;
     margin-bottom: 24px;
+  }
+}
+
+.show-card-booking {
+  text-align: center;
+  margin-top: 12px;
+  border-left: 1px solid rgb(220,220,220);
+  padding: 0 32px 32px 32px;
+
+  p {
+    margin-bottom: 6px;
+    text-align: left;
+  }
+
+  #no-margin {
+    margin: 0;
+  }
+
+  h3 {
+    color: #04420D;
+    text-shadow: rgba(0, 0, 0, 0.2);
+  }
+
+  #email {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgba(61,131,28, 0.3);
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-align: center;
   }
 }
