@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
     if params[:query].present?
       @items = policy_scope(Item.search_by_title_and_description(params[:query]))
     else
-      @items = policy_scope(Item)
+      @items = policy_scope(Item).order(created_at: :desc)
     end
   end
 
