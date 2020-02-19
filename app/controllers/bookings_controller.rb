@@ -18,6 +18,6 @@ class BookingsController < ApplicationController
     @booking.destroy
     authorize @booking
 
-    redirect_to items_path
+    redirect_to item_path(@booking.item)
   end
 end

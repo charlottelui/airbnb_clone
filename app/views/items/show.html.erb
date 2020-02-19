@@ -60,13 +60,13 @@
     </div>
     <div class="show-card-booking">
       <% if @item.user == current_user %>
-        <h3>Welcome!</h3>
+        <h3>Welcome back!</h3>
         <p>This is your item.</p>
       <% elsif @item.booking.nil? %>
         <h3>Hello!</h3>
         <p>I'm looking for a new owner.</p>
       <% elsif @item.booking.user == current_user %>
-        <h3>Congrulation!</h3>
+        <h3>Yay!</h3>
         <p>You have reserved this item.</p>
         <p id="no-margin">To arrange the transcation, please</p>
         <p>contact the seller at:</p>
