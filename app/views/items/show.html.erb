@@ -32,6 +32,7 @@
         <h1 class= "show-card-title"><%= @item.title.capitalize %></h1>
         <p><strong>Price: </strong>$<%= @item.price %></p>
         <p><strong>About this item: </strong><%= @item.description %></p>
+        <p><strong>Address: </strong><%= @item.address %></p>
       </div>
       <div class="show-card-links">
         <% if policy(@item).edit? %>
@@ -59,7 +60,13 @@
       </div>
     </div>
     <div class="show-card-booking">
-      <% if @item.user == current_user %>
+      <% if @item.booking && @item.user == current_user %>
+        <h3>Wow!</h3>
+        <p><%= @item.booking.user.first_name %> has reserved your product.</p>
+        <p class="no-margin">To arrange the transcation, please </p>
+        <p>contact the buyer at:</p>
+        <p class="email"><%= @item.booking.user.email %></p>
+      <% elsif @item.user == current_user %>
         <h3>Welcome back!</h3>
         <p>This is your item.</p>
       <% elsif @item.booking.nil? %>
@@ -68,9 +75,9 @@
       <% elsif @item.booking.user == current_user %>
         <h3>Yay!</h3>
         <p>You have reserved this item.</p>
-        <p id="no-margin">To arrange the transcation, please</p>
+        <p class="no-margin">To arrange the transcation, please</p>
         <p>contact the seller at:</p>
-        <p id="email"><%= @item.user.email %></p>
+        <p class="email"><%= @item.user.email %></p>
       <% elsif @item.booking %>
         <h3>Sorry!</h3>
         <p>This item is reserved.</p>
