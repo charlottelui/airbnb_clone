@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
       {
         lat: item.latitude,
         lng: item.longitude,
-        image_url: helpers.asset_url('trashcanz')
+        image_url: helpers.asset_url('trashcanz.png')
 
       }
     end
