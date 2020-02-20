@@ -1,27 +1,18 @@
-<div class="container d-flex">
+<div class="d-flex full-screen-container-index">
   <div class="left-container">
-    <div class="container">
-      <div class="row">
-        <div class="col-6 offset-3">
-          <h1 class="text-center">All Used Items</h1>
-          <%= form_tag items_path, method: :get, class: "d-flex align-items-center" do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control mr-2",
-              placeholder: "Find a used item"
-            %>
-            <%= submit_tag "Search", class: "search-button m-0" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row no-gutters">
-        <% @items.each do |item| %>
-          <div class="col-12 col-sm-6 col-md-4">
+    <h1 class="text-center">All Used Items</h1>
+    <%= form_tag items_path, method: :get, class: "search-bar" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control mr-2",
+        placeholder: "Find a used item"
+      %>
+      <%= submit_tag "Search", class: "search-button m-0" %>
+    <% end %>
+      <!-- <div class="cards-container"> -->
+        <div class="cards">
+          <% @items.each do |item| %>
             <div class="item-card">
-              <!-- photo -->
               <div class="item-card-img" style= "background-image:url(
                 <% if item.photos.attached? %>
                   <%= cl_image_path item.photos.first.key, height: 300, width: 400, crop: :fill %>
@@ -29,30 +20,29 @@
                   <%= 'https://cdn4.iconfinder.com/data/icons/documents-letters-and-stationery/400/doc-14-512.png' %>
                 <% end %>)">
               </div>
-              <div class="item-card-title">
-                <strong><%= item.title.capitalize %></strong>
-              </div>
-              <div class="item-date">
-              <p>Posted on: <strong><%= item.created_at.strftime("%b %d, %Y") %></strong></p>
-              </div>
-              <div class="item-card-info">
-                <%= link_to 'See Details', item_path(item), class: 'button' %>
-                <% if item.booking %>
-                  <p class="item-reserved"> <strong><u>Reserved</u></strong></p>
-                <% else %>
-                  <% if item.user == current_user %>
-                    <p class="item-reserved"> <strong><u>My item</u></strong></p>
+                <div class="item-card-title">
+                  <strong><%= item.title.capitalize %></strong>
+                </div>
+                <div class="item-date">
+                  <p>Posted on: <strong><%= item.created_at.strftime("%b %d, %Y") %></strong></p>
+                </div>
+                <div class="item-card-info">
+                  <%= link_to 'See Details', item_path(item), class: 'button' %>
+                  <% if item.booking %>
+                    <p class="item-reserved"> <strong><u>Reserved</u></strong></p>
                   <% else %>
-                    <%= link_to "I want it!", item_bookings_path(item), method: :post, class: 'button'  %>
+                    <% if item.user == current_user %>
+                      <p class="item-reserved"> <strong><u>My item</u></strong></p>
+                    <% else %>
+                      <%= link_to "I want it!", item_bookings_path(item), method: :post, class: 'button'  %>
+                    <% end %>
                   <% end %>
-                <% end %>
               </div>
             </div>
-          </div>
-        <% end %><!-- @items.each -->
-      </div>
+          <% end %>
+        </div>
+      <!-- </div> -->
     </div>
-  </div>
   <div class="right-container">
     <div
       id="map"
@@ -61,5 +51,20 @@
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     ></div>
-  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
