@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     authorize @booking
     if !has_booking
       if @booking.save
-        redirect_to items_path
+          redirect_to request.referrer
         return
       end
     end
